@@ -1,0 +1,11 @@
+{% extends "projet_base.html" %}
+{% load bootstrap3 %}
+
+{% block pre_content %}
+<h4>Créez un nouveau Projet</h4>
+  <form method="POST" action="{% url 'projet:create' %}" id="projetForm">
+  	{% csrf_token %}
+  	{% bootstrap_form form %}
+  	<input type="submit" value="Create" class="btn btn-primary btn-large">
+  </form>
+{% endblock %}

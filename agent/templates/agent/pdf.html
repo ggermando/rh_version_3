@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+    <head>
+        <title>Sunphenix RH</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 14px;
+            }
+            .header {
+                font-size: 20px;
+                font-weight: 100;
+                text-align: center;
+                color: #007cae;
+            }
+            .title {
+                font-size: 22px;
+                font-weight: 100;
+               /* text-align: right;*/
+               padding: 10px 20px 0px 20px;  
+            }
+            .title span {
+                color: #007cae;
+            }
+            .details {
+                padding: 10px 20px 0px 20px;
+                text-align: left !important;
+                /*margin-left: 40%;*/
+            }
+            .hrItem {
+                border: none;
+                height: 1px;
+                /* Set the hr color */
+                color: #333; /* old IE */
+                background-color: #fff; /* Modern Browsers */
+            }
+        </style>
+    </head>
+    <body>
+        {% load static %}
+        <div class='wrapper'>
+            <div class='header'>
+                <p class='title'>- CV -</p>
+            </div>
+        <div>
+        <div class='details'>
+            <!-- <p class='title'> I. Identité</p> -->
+    
+            <h4>1. IDENTITE</h4>
+            <h6>Nom: <b>{{ agent.nom | upper }}</b></h6>
+            <h6>Post-nom: <b>{{ agent.post_nom | upper }}</b></h6>
+            <h6>Prénom: <b>{{ agent.prenom | title  }}</b></h6>
+            <img src="{{ agent.image.url }}" class="img-thumbnail" alt="">
+          
+            <h6>Date de naissance: <b>{{ agent.date_de_naissance }}</b></h6>
+            <h6>Sexe: <b>{{ agent.sexe }}</b></h6>
+            <h6>Etat civil: <b>{{ agent.etat_civil }}</b></h6>
+            <h6>Nombre d'enfant: <b>{{ agent.nbr_enfant }}</b></h6>
+            <h6>Phone number: <b>{{ agent.phone }}</b></h6>
+            <h6>Adresse mail: <b>{{ agent.email }}</b></h6>
+
+            <h4>2. ETUDE FAITES</h4>
+
+            <h6>Primaire: <b>{{ agent.primaire }}</b></h6>
+            <h6>Secondaire: <B>{{ agent.secondaire }}</B></h6>
+            <h6>Universitaire: <b>{{ agent.universitaire }}</b></h6>
+            <h6>Autres: <b>{{ agent.autres }}</b></h6>
+
+            <h4>3. LOGICIEL METRISE</h4>
+
+            <h6>Formation: <b>{{ agent.maitrise }}</b></h6>
+
+            <h4>4. EXPERIENCE</h4>
+
+            <h6>Experience: <b>{{ agent.experience }}</b></h6>
+
+            <h4>5. REFERENCE</h4>
+
+            <h6>Reference: <b>{{ agent.reference }}</b></h6>
+
+            <h4>6. LANGUE</h4>
+
+            <h6>Langue: <b>{{ agent.langue }}</b></h6>
+
+            <h6>Centre d'interet: <b>{{ agent.centre_interet }}</b></h6>
+            <hr class='hrItem' />
+                  
+        </div>
+    </div>
+    </body>
+</html>

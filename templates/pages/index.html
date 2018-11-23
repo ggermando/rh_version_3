@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login Page</title>
+
+    <!--   ~GK~   -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
+
+    {% include "css.html" %}
+</head>
+
+<body style="background-color:coral ">
+  <div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3"> 
+                <br>
+                <br>
+                <br>       
+      
+            <h1>Login</h1>
+           <form method="post"  role="form" action="/">
+                {% csrf_token %}
+                <input type="text" name="username" placeholder="Utilisateur"> 
+                        
+                <input type="password" name="password" placeholder="Mot de passe"> 
+
+                <input type="submit" value="Connnexion" class="btn btn-default">
+            </form>
+        </div>
+    </div>
+
+</div>
+ 
+</body>
+
+</html>
+
+
+    

@@ -1,0 +1,30 @@
+
+
+
+<nav class="navbar">
+
+    <div class="wrapper">
+
+        <a class="nav_title" href="{% url 'home' %}">SUNPHENIX <sub>Ressources Humaines</sub></a>
+        <ul class="navbar_float">
+ 
+            <li>
+                    <a href="{% url 'projet:home' %}" class="btn btn-outline-primary">Projets</a>
+            </li>
+            <li>
+                    <a href="{% url 'agent:home' %}" class="btn btn-outline-primary">Agents</a>
+            </li>
+            <li>
+                <a href="{% url 'agent:create' %}" class="btn btn-outline-primary">Add Agents</a>
+            </li>
+            <li>
+                    <a href="{% url 'logout' %}" class="btn btn-outline-primary">Déconnexion</a>
+            </li>
+
+        </ul>
+
+    </div>
+        
+</nav>
+
+<br>

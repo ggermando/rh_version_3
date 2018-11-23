@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+{% load humanize %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-md-8 offset-md-1">
+        
+    <h1>Agents Sunphenix</h1>
+
+    <br>
+
+        <form class="form-inline" action="." method="get">
+                        
+            <input class="form-control mr-sm-" type="search" data-placement="bottom" placeholder="Recherche Agent" aria-label="Search" name="q" >
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Recherche</button>
+                    
+            {% if query %}
+                    <h4>{{ count }} Résultats pour votre recherche"<b><em>{{ query }}</em></b>"</h4>
+                
+                    {% for object in object_list %}
+                    
+                <ul>
+                <li>
+                    <a href='{{ object.get_absolute_url }}'>{{ object.nom }}</a>
+                </li>
+                </ul>
+                        
+            {% empty %}
+                <li>Vérifiez l'orthographe de vos termes de recherche...</li>
+                <li>Réessayez dans une autre category recherche...</li>
+            {% endfor %}
+                
+            {% else %}
+            {% endif %}
+                        
+        </form>
+
+        <br>
+
+        <div class="list-group">
+
+            <div class="list__personnel">
+
+                {% for object in object_list %}
+                    <h5><a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">{{ object.full_name | title }}</a></h5> 
+
+                {% empty %}
+                    <li>Aucun Agents disponible!</li>
+                {% endfor %}
+
+            </div>
+                        
+        </div>
+
+<br>
+<br>
+        <!-- pagination -->
+        <div class="pagination">
+            <span class="step-links">
+                {% if personnel.has_previous %}
+                <a href="?page=1">&laquo; first</a>
+                <a href="?page={{ personnel.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ personnel.number }} of {{ personnel.paginator.num_pages }}.
+            </span>
+
+            {% if personnel.has_next %}
+                <a href="?page={{ personnel.next_page_number }}">next</a>
+                <a href="?page={{ personnel.paginator.num_pages }}">last &raquo;</a>
+            {% endif %}
+            </span>
+        </div>
+
+    </div>
+  </div>
+        
+{% endblock %}

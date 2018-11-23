@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+  
+<div class="jumbotron">
+    <h1 class="display-4">Page pas trouvé 404!</h1>
+    <p class="lead">Lorsque cette page HTTP 404 apparait, c'est qu'il y a une erreur dans l'url entré vérifié votre url dans le navigateur.</p>
+</div>
+<h6>Retournez a la page d'accueil <a href="{% url 'home' %}">ici.</a></h6>
+{% endblock content %}
+
