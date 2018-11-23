@@ -1,6 +1,6 @@
 {
     "team.showWelcomeMessage": false,
-    "python.venvPath": "D:\\px_projects\\SPX\\rhvenv\\Scripts\\python.exe",
+    // "python.pythonPath": "D:\\px_projects\\SPX\\rhvenv\\Scripts\\python.exe",
     "workbench.iconTheme": "vscode-icons",
     "files.autoSave": "afterDelay",
     "terminal.integrated.shell.windows": "C:\\Windows\\System32\\cmd.exe",
@@ -13,6 +13,7 @@
         "**/__pycache__": true,
         "**/.idea": true,
     },
-    "editor.fontSize": 12
+    "editor.fontSize": 12,
+    "python.venvPath": "D:\\spx_projects\\SPX\\rhvenv\\Scripts"
     
 }
