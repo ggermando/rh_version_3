@@ -2,10 +2,14 @@
 {% load bootstrap3 %}
 
 {% block pre_content %}
+<div class="col-md-4">
 <h4>Créez un nouveau Projet</h4>
+</div>
+<div class="col-md-8">
   <form method="POST" action="{% url 'projet:create' %}" id="projetForm">
   	{% csrf_token %}
   	{% bootstrap_form form %}
   	<input type="submit" value="Create" class="btn btn-primary btn-large">
-  </form>
+	</form>
+	</div>
 {% endblock %}
