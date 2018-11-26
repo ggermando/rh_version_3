@@ -4,7 +4,7 @@ from rh_version_3.settings import *
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 TEMPLATES_DEBUG = False
 

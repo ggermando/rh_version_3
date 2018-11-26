@@ -13,6 +13,8 @@ class CreateProjet(CreateView):
 
 class DetailsProjet(DetailView):
     model = Projet
+    template_name = "projet/projet_detail.html"
 
 class ListProjet(ListView):
     model = Projet
+

@@ -33,7 +33,8 @@ urlpatterns = [
     url(r'^projet/', include('projet.urls', namespace="projet")),
     url(r'^$', LoginView.as_view(), name='login'),
     url(r'^logout/$', LogoutView.as_view(), name='logout'), 
-    url(r'^home/$', Home.as_view(), name='home')
+    url(r'^home/$', Home.as_view(), name='home'),
+    url(r'^acceuil/$', TemplateView.as_view(template_name="pages/acceuil.html"), name='acceuil'),
     
 ]
 

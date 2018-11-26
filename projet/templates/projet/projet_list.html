@@ -1,54 +1,55 @@
 {% extends "projet_base.html" %}
 
-  
-{% block pre_content %}
-<div class="col-md-10">
-	
-	<div class="content">
-		{% if user.is_authenticated %}
-		<h2 class=>
-			Bienvenue
-			<a href="#">@{{ user.username }}</a>
-		</h2>
-		<br>
-    {% endif %}
-
-			<h4>Bienvenu sur la page Projets! Selectionnez le Projet pour voir les Details!</h4>
-			<br>
-			{% if not user.is_authenticated %}
-			<h4>Pour Ajouter un Nouveau Projet svp veuillez vous connectez ou vous inscrire.</h4>
-			{% endif %}
-	</div>
-
-	<br>
-	{% if user.is_authenticated %}
-	<a href="{% url 'projet:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span> Créez un nouveau Projet!</a>
-	{% endif %}
-
-</div>
-
-{% endblock %}
-
-{% block sub_content %}
-<div class="col-md-12">
-	
-	<div class="list-group">
-		{% for projet in object_list %}
-		  <a class="list-group-item" href="#">
-			    <h3 class="title list-group-item-heading">{{ projet.nom_du_projet }}</h3>
-				 
-				<p>{{ projet.description | linebreaks | truncatechars:100 }}</p>
-				<br>
+		{% block pre_content %}
+			<div class="col-md-4">
 			
-				<div class="row">
-					<div class="col-md-6 offset-md-3">
-						<span class="badge badge-secondary">{{ projet.agent_membres.count }}</span> Membre du Projet{{ projet.agent_membres.count | pluralize }}
-					</div>
-				</div>				
-			</a>
-		{% endfor %}
-	</div>
+				<div class="content">
+					{% if user.is_authenticated %}
+						<h2 class=>
+							Bienvenue
+							<a href="#">@{{ user.username | title }}</a>
+						</h2>
+						<br>
+					{% endif %}
 
-</div>
-	
-{% endblock %}
+					<h4>Bienvenu sur la page Projets! Selectionnez le Projet pour voir les Details!</h4>
+					<br>
+					{% if not user.is_authenticated %}
+						<h4>Pour Ajouter un Nouveau Projet svp veuillez vous connectez ou vous inscrire.</h4>
+					{% endif %}
+				</div>
+
+				<br>
+				{% if user.is_authenticated %}
+				<a href="{% url 'projet:create' %}" class="btn btn-md btn-fill btn-warning"><span class="glyphicon glyphicon-plus-sign"></span> Créez un nouveau Projet!</a>
+				{% endif %}
+
+		</div>
+		{% endblock %}
+
+		{% block sub_content %}
+			<div class="col-md-8">
+				
+				<div class="list-group">
+					{% for projet in object_list %}
+						<a class="list-group-item" href="{% url 'projet:details' projet.id %}">
+							<h3 class="title list-group-item-heading">{{ projet.nom_du_projet }}</h3>
+							
+							<p>{{ projet.description | linebreaks | truncatechars:100 }}</p>
+							<br>
+						
+							<div class="row">
+								<div class="col-md-6 offset-md-3">
+									<span class="badge badge-secondary">{{ projet.agent_membres.count }}</span> Membre du Projet{{ projet.agent_membres.count | pluralize }}
+								</div>
+							</div>				
+						</a>
+					{% endfor %}
+				</div>
+
+			</div>	
+		{% endblock %}
+
+
+
+

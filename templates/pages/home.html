@@ -3,11 +3,13 @@
 
 {% block content %}
 
-Bienvenue {{ User.name }}
-
-
+    <div class="jumbotron">
+        <h1 class="display-4">Bonjour <a href=''>{{ user.username| title }}</a>!</h1>
+        <p class="lead">Vous avez la possibilité de voir les projets en cours et les agents faisant parti de ce dernier,
+            vouz avez aussi la possibilité de voir tous les agents ayant deposés leurs CV a Sunphenix. <br>
+            Il suffit de selectionner l'un des options sur la barre de navigation...</p>
+        <hr class="my-4">
+        <p>{{ user.username| title }}, vous pouvez aussi ajouter des agents dans notre base de données.</p>
+        <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+    </div>
 {% endblock content %}
-
-
-
-

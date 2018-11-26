@@ -13,25 +13,6 @@ ETAT_CIVIL = (
 
 # Create your models here.
 
-class PersonnelQuerySet(models.QuerySet):
-    def search(self, query):
-        if query is not None:
-            query = query.strip()
-            return self.filter(Q(prenom__filter=query) |
-                               Q(nom__filter=query) |
-                               Q(post_nom__filter=query) |
-                               Q(full_name__filter=query)
-                                ).distinct()
-        return self
-
-
-class PersonnelManager(models.Manager):
-    def get_queryset(self):
-        return PersonnelQuerySet(self.model, using=self._db)
-
-    def search(self, query=None):
-        return self.get_queryset().search(query=query)
-
 
 class Agent(models.Model):
     
@@ -64,7 +45,8 @@ class Agent(models.Model):
 
     created = models.DateTimeField(verbose_name='created', auto_now_add=True)
 
-    objects = PersonnelManager()
+
+
 
     def __str__(self):
         return 'personne: {}'.format(self.full_name)

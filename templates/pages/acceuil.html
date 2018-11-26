@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="jumbotron">
+  <h1 class="display-4">Vous êtes sur la page d'acceuil!</h1>
+  <p class="lead"></p>
+  <hr class="my-4">
+  <p>Rendez la base de données plus grande en ajoutant des CV.</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'agent:create' %}" role="button">Ajoutez un Agents ici</a>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Projets</h5>
+        <p class="card-text">Base de données et gestion des projets dans l'entreprise.</p>
+        <a href="{% url 'projet:create' %}" class="btn btn-primary">Voir les Projets</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Agents</h5>
+        <p class="card-text">Base de données et gestion des agents dans l'entreprise.</p>
+        <a href="{% url 'agent:home' %}" class="btn btn-primary">Voir les Agents</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

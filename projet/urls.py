@@ -9,5 +9,5 @@ urlpatterns = [
 
     url(r"^$", ListProjet.as_view(), name="home"),
     url(r"^new/$", CreateProjet.as_view(), name="create"),
-    url(r'^agent/(?P<slug>\d+)/$', DetailsProjet.as_view(), name="details"),
+    url(r'^projet//in/(?P<pk>\d+)/$', DetailsProjet.as_view(), name="details"),
 ]

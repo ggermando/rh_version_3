@@ -3,10 +3,17 @@
 {% load bootstrap3 %}
 
 {% block content %}
-<h4>Créez un Nouveau Personnel Sunphenix ici</h4>
-<form method="POST" action="{% url 'agent:create' %}" id="agentForm">
-	{% csrf_token %}
-	{% bootstrap_form form %}
-	<input type="submit" value="Enregister" class="btn btn-primary btn-large" id="myButton" data-loading-text="Loading..."  autocomplete="off">
-</form>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+  
+	<h4>Créez un Nouveau Personnel Sunphenix ici</h4>
+	<form method="POST" action="#" id="agentForm">
+		{% csrf_token %}
+		{% bootstrap_form form %}
+		<input type="submit" value="Enregister" class="btn btn-primary btn-large" id="myButton" data-loading-text="Loading..."  autocomplete="off">
+	</form>
+  
+  </div>
+</div>
+
 {% endblock %}

@@ -47,44 +47,43 @@
             <!-- <p class='title'> I. Identité</p> -->
     
             <h4>1. IDENTITE</h4>
-            <h6>Nom: <b>{{ agent.nom | upper }}</b></h6>
-            <h6>Post-nom: <b>{{ agent.post_nom | upper }}</b></h6>
-            <h6>Prénom: <b>{{ agent.prenom | title  }}</b></h6>
+            <p>Nom: <b>{{ agent.nom | upper }}</b></p>
+            <p>Post-nom: <b>{{ agent.post_nom | upper }}</b></p>
+            <p>Prénom: <b>{{ agent.prenom | title  }}</b></p>
             <img src="{{ agent.image.url }}" class="img-thumbnail" alt="">
           
-            <h6>Date de naissance: <b>{{ agent.date_de_naissance }}</b></h6>
-            <h6>Sexe: <b>{{ agent.sexe }}</b></h6>
-            <h6>Etat civil: <b>{{ agent.etat_civil }}</b></h6>
-            <h6>Nombre d'enfant: <b>{{ agent.nbr_enfant }}</b></h6>
-            <h6>Phone number: <b>{{ agent.phone }}</b></h6>
-            <h6>Adresse mail: <b>{{ agent.email }}</b></h6>
+            <p>Date de naissance: <b>{{ agent.date_de_naissance }}</b></p>
+            <p>Sexe: <b>{{ agent.sexe }}</b></p>
+            <p>Etat civil: <b>{{ agent.etat_civil }}</b></p>
+            <p>Nombre d'enfant: <b>{{ agent.nbr_enfant }}</b></p>
+            <p>Phone number: <b>{{ agent.phone }}</b></p>
+            <p>Adresse mail: <b>{{ agent.email }}</b></p>
 
             <h4>2. ETUDE FAITES</h4>
 
-            <h6>Primaire: <b>{{ agent.primaire }}</b></h6>
-            <h6>Secondaire: <B>{{ agent.secondaire }}</B></h6>
-            <h6>Universitaire: <b>{{ agent.universitaire }}</b></h6>
-            <h6>Autres: <b>{{ agent.autres }}</b></h6>
+            <p>Primaire: <b>{{ agent.primaire }}</b></p>
+            <p>Secondaire: <B>{{ agent.secondaire }}</B></p>
+            <p>Universitaire: <b>{{ agent.universitaire }}</b></p>
+            <p>Autres: <b>{{ agent.autres |linebreaks }}</b></p>
 
             <h4>3. LOGICIEL METRISE</h4>
 
-            <h6>Formation: <b>{{ agent.maitrise }}</b></h6>
+            <p>Formation: <b>{{ agent.maitrise |linebreaks }}</b></p>
 
             <h4>4. EXPERIENCE</h4>
 
-            <h6>Experience: <b>{{ agent.experience }}</b></h6>
+            <p>Experience: <b>{{ agent.experience |linebreaks }}</b></p>
 
             <h4>5. REFERENCE</h4>
 
-            <h6>Reference: <b>{{ agent.reference }}</b></h6>
+            <p>Reference: <b>{{ agent.reference |linebreaks }}</b></p>
 
             <h4>6. LANGUE</h4>
 
-            <h6>Langue: <b>{{ agent.langue }}</b></h6>
+            <p>Langue: <b>{{ agent.langue |linebreaks }}</b></p>
 
-            <h6>Centre d'interet: <b>{{ agent.centre_interet }}</b></h6>
-            <hr class='hrItem' />
-                  
+            <p>Centre d'interet: <b>{{ agent.centre_interet }}</b></p>
+                      
         </div>
     </div>
     </body>

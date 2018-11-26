@@ -1,28 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login Page</title>
-
-    <!--   ~GK~   -->
+    <!--
+            ~ GK ~
+    -->
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600">
-
-    {% include "css.html" %}
+    <!-- https://fonts.google.com/specimen/Open+Sans -->
+    <link rel="stylesheet" href=" {% static 'css/css/fontawesome.min.css' %}">
+    <!-- https://fontawesome.com/ -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}  ">
+    <!-- https://getbootstrap.com/ -->
+    <link rel="stylesheet" href="{% static 'css/css/tooplate.css' %} ">
 </head>
 
-<body style="background-color:coral ">
-  <div class="container">
-    <div class="row">
-        <div class="col-md-6 offset-md-3"> 
-                <br>
-                <br>
-                <br>       
-      
-            <h1>Login</h1>
+<body class="bg03">
+    <div class="container">
+        <div class="row tm-mt-big">
+            <div class="col-12 mx-auto tm-login-col">
+                <div class="bg-white tm-block">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <!-- <i class="fas fa-3x fa-tachometer-alt tm-site-icon text-center"></i> -->
+                            <img class="tm-block-title mt-3" src="{% static 'images/spx.png' %}" height="200" width="300">
+                            <!-- <h2 class="tm-block-title mt-3">Login</h2> -->
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-10">
+                            <form method="post"  role="form" action="/" class="tm-login-form">
+                                {% csrf_token %}
+                                <div class="input-group">
+                                    <label for="username" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label"></label>
+                                    <!-- <input name="username" type="text" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username"> -->
+                                    <input type="text" name="username" class="form-control validate col-xl-9 col-lg-8 col-md-8 col-sm-7" id="username" placeholder="Utilisateur"> 
+                                </div>
+                                <div class="input-group mt-3">
+                                    <label for="password" class="col-xl-4 col-lg-4 col-md-4 col-sm-5 col-form-label"></label>
+                                    <!-- <input name="password" type="password" class="form-control validate" id="password" > -->
+                                    <input type="password" name="password" class="form-control validate" id="password" placeholder="Mot de passe">                         
+                                </div>
+                                <div class="input-group mt-3">
+                                    <button type="submit" class="btn btn-lg btn-outline-success mx-auto" >Login</button>
+                                </div>
+                                <!-- <div class="input-group mt-3">
+                                    <p><em>Just put a character to login.</em></p>
+                                </div> -->
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="row tm-mt-big">
+            <div class="col-12 font-weight-light text-center">
+                <p class="d-inline-block tm-bg-black text-white py-2 px-4">
+                Copyright &copy; {% now "Y" %}. Sunphenix
+                </p>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+            <!-- <h1>Login</h1>
            <form method="post"  role="form" action="/">
                 {% csrf_token %}
                 <input type="text" name="username" placeholder="Utilisateur"> 
@@ -30,15 +89,8 @@
                 <input type="password" name="password" placeholder="Mot de passe"> 
 
                 <input type="submit" value="Connnexion" class="btn btn-default">
-            </form>
-        </div>
-    </div>
+            </form> -->
 
-</div>
- 
-</body>
-
-</html>
 
 
     

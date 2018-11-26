@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
-
+from django.core.urlresolvers import reverse
 from agent.models import Agent
 
 # https://docs.djangoproject.com/en/1.11/howto/custom-template-tags/#inclusion-tags
@@ -25,9 +25,12 @@ class Projet(models.Model):
         self.description_html = self.description
         super().save(*args, **kwargs)
 
+    # def get_absolute_url(self, id):
+    #     return reverse("projet:single", kwargs={"id": self.id})
+
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('projet:details', kwargs={"slug": self.slug})
+        return reverse('projet:details', kwargs={"id": self.id})
 
     class Meta:
         ordering = ["nom_du_projet"]

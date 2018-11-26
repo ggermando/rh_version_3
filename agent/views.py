@@ -1,14 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, View, CreateView
-
-from .utils import Render
-from .models import Agent
 from .forms import AgentForm
+from .models import Agent
+from .utils import Render
+from django.shortcuts import get_object_or_404, render
+from django.views.generic import CreateView, ListView, View
+from pure_pagination.mixins import PaginationMixin
+
 # Create your views here.
 
-class AgentList(ListView):
+class AgentList(PaginationMixin, ListView):
     model = Agent
     template_name = 'agent/agent_list.html'
+    paginate_by  =  15
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

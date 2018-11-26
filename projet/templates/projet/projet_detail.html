@@ -1,32 +1,32 @@
 {% extends "projet_base.html" %}
 
 {% block pre_content %}
+	<div class="col-md-8">
 
+		<h4>Projet: <b>{{ projet.nom_du_projet }}</b></h4>
 
-	<h4>Projet: <b>{{ projet.nom_du_projet }}</b></h4>
+		<br>
 
-	<br>
-
-	<h6>Description: <b>{{ projet.description | safe }}</b> </h6>
+		<h6>Description: <b>{{ projet.description | safe }}</b> </h6>
 		
+	</div>	
 
 {% endblock %}
 
-
 {% block sub_content %}
 
-	<h4>Nombre d'Agents pour ce Projet: {{ projet.agent_membres.count }}</h4>
+	<div class="col-md-4">
 
-	<br>
+		<h4>Nombre d'Agents: <b>{{ projet.agent_membres.count }}</b></h4>
+		<br>
+			{% for user_group in projet.agent_membres.all %}
 
-		{% for user_group in projet.agent_membres.all %}
+					<ul class="list-group">
+						<li class="list-group-item">
+							<h5>{{ user_group.full_name }}</h5>
+						</li>
+					</ul>
 
-			<div class="list-group">
-				
-				<h5>{{ user_group.full_name }}</h5>
-							  
-			  </div>
-
-		{% endfor %}
-
+			{% endfor %}
+	</div>
 {% endblock %}
