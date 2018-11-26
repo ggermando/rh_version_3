@@ -18,3 +18,5 @@ class AgentForm(forms.ModelForm):
         if user is not None:
             self.fields["nom"].queryset = ()
 
+    def redirect_url(self):
+        pass
