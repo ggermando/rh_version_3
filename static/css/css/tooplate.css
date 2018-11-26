@@ -32,17 +32,6 @@ body {
   padding-right: 50px;
 }
 
-.btn-lg{
-  
-}
-
-.bg02 {
-	background-image: url(../img/dash-bg-02.jpg);
-}
-
-.bg03 {
-	background-image: url(../img/dash-bg-03.jpg);
-}
 
 a {
   transition: all 0.3s ease;
