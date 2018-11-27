@@ -18,8 +18,11 @@
         <div class="list-group">
 
                 {% for object in object_list %}
-                    <div class="d-flex p-2 bd-highlight">
-                        <h5><a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">{{ object.full_name | title }}</a></h5> 
+                
+                    <div class="d-flex flex-column bd-highlight mb-3">
+                            <div class="p-2 bd-highlight">                               
+                                <h5><a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">{{ object.full_name | upper }}</a></h5> 
+                            </div>                       
                     </div>
                    
                 {% empty %}
