@@ -12,7 +12,7 @@
                 font-weight: 100;
                 text-align: center;
                 color: #007cae;
-            }.
+            }
             .title {
                 font-size: 22px;
                 font-weight: 100;
@@ -76,9 +76,11 @@
             <p>Universitaire: <b>{{ agent.universitaire }}</b></p>
             <p>Autres: <b>{{ agent.autres |linebreaks }}</b></p>
 
-            <h4>3. LOGICIEL METRISE</h4>
+            <h4>3. FORMATION ET MAITRISE</h4>
 
-            <p class="">Formation: <b>{{ agent.maitrise |linebreaks }}</b></p>
+            <p class="">Formation: <b>{{ agent.formation |linebreaks }}</b></p>
+
+            <p class="">Maitrise: <b>{{ agent.maitrise |linebreaks }}</b></p>
 
             <h4>4. EXPERIENCE</h4>
 
