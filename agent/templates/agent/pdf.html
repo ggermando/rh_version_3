@@ -12,7 +12,7 @@
                 font-weight: 100;
                 text-align: center;
                 color: #007cae;
-            }
+            }.
             .title {
                 font-size: 22px;
                 font-weight: 100;
@@ -34,6 +34,10 @@
                 color: #333; /* old IE */
                 background-color: #fff; /* Modern Browsers */
             }
+            h1, h2, h3, h4, h5, h6 {
+                margin-top: 0;
+                margin-bottom: 0.5rem;
+              }
             p {
                 margin-top: 0;
                 margin-bottom: 1rem;
@@ -74,19 +78,19 @@
 
             <h4>3. LOGICIEL METRISE</h4>
 
-            <p>Formation: <b>{{ agent.maitrise |linebreaks }}</b></p>
+            <p class="">Formation: <b>{{ agent.maitrise |linebreaks }}</b></p>
 
             <h4>4. EXPERIENCE</h4>
 
-            <p>Experience: <b>{{ agent.experience |linebreaks }}</b></p>
+            <p class="">Experience: <b>{{ agent.experience |linebreaks }}</b></p>
 
             <h4>5. REFERENCE</h4>
 
-            <p>Reference: <b>{{ agent.reference |linebreaks }}</b></p>
+            <p class="">Reference: <b>{{ agent.reference |linebreaks }}</b></p>
 
             <h4>6. LANGUE</h4>
 
-            <p>Langue: <b>{{ agent.langue |linebreaks }}</b></p>
+            <p class="">Langue: <b>{{ agent.langue |linebreaks }}</b></p>
 
             <p>Centre d'interet: <b>{{ agent.centre_interet }}</b></p>
                       

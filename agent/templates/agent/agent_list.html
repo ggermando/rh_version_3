@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% load humanize %}
 
-
 {% block content %}
 
 <div class="row">
@@ -18,17 +17,14 @@
 
         <div class="list-group">
 
-            <div class="list__personnel">
-
                 {% for object in object_list %}
-                    <h5><a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">{{ object.full_name | title }}</a></h5> 
-
+                    <div class="d-flex p-2 bd-highlight">
+                        <h5><a href="{{ object.get_absolute_url }}" class="list-group-item list-group-item-action">{{ object.full_name | title }}</a></h5> 
+                    </div>
+                   
                 {% empty %}
                     <li>Aucun Agents disponible!</li>
                 {% endfor %}
-
-
-            </div>
                         
         </div>
 

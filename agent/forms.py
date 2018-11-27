@@ -3,7 +3,6 @@ from agent.models import Agent
 
 from . import models
 
-
 class AgentForm(forms.ModelForm):
     class Meta:
         model = Agent
@@ -19,4 +18,5 @@ class AgentForm(forms.ModelForm):
             self.fields["nom"].queryset = ()
 
     def redirect_url(self):
-        pass
+        return 
+
